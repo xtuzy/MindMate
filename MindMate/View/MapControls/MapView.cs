@@ -29,12 +29,12 @@ namespace MindMate.View.MapControls
     public class MapView : Drawing.IView
     {
 
-        public const int HOR_MARGIN = 20;
-        public const int VER_MARGIN = 3;
+        public const int HOR_MARGIN = 20;//水平边距
+        public const int VER_MARGIN = 3;//垂直边距
 
-        public const int CANVAS_DEFAULT_HEIGHT = 4096;
+        public const int CANVAS_DEFAULT_HEIGHT = 4096;//画布无错宽高
         public const int CANVAS_DEFAULT_WIDTH = 4096;
-        public const int CANVAS_SIZE_INCREMENT = 1000;
+        public const int CANVAS_SIZE_INCREMENT = 1000;//画布大小增长
 
         /// <summary>
         /// 
@@ -53,16 +53,16 @@ namespace MindMate.View.MapControls
             Canvas.Width = CANVAS_DEFAULT_WIDTH;
             Canvas.Height = CANVAS_DEFAULT_HEIGHT;
 
-            RegisterTreeEvents();
-            RefreshNodePositions();
-            Canvas.Invalidate();
+            RegisterTreeEvents();//注册节点树事件
+            RefreshNodePositions();//刷新节点位置
+            Canvas.Invalidate();//画布刷新
 
-            this.nodeTextEditor = new MapViewTextEditor(this, NodeView.DefaultFont);
-            FormatPainter = new MapViewFormatPainter(this);                 
+            this.nodeTextEditor = new MapViewTextEditor(this, NodeView.DefaultFont);//文本编辑器
+            FormatPainter = new MapViewFormatPainter(this);//格式画板             
 
         }
 
-        private readonly MapTree tree;
+        private readonly MapTree tree;//导图树
         public MapTree Tree
         {
             get { return tree; }            
