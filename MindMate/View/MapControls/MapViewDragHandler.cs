@@ -43,12 +43,12 @@ namespace MindMate.View.MapControls
                 ShowDropHint(e);//显示提示
             }
         }        
-
+//鼠标落下时
         internal void OnMouseDrop(MouseEventArgs e)
         {
-            if (IsNodeDragging)
+            if (IsNodeDragging)//节点拖拉
             {
-                RefreshNodeDropLocation(e.Location);
+                RefreshNodeDropLocation(e.Location);//刷新节点下落位置
                 if (!NodeDropLocation.IsEmpty && NodeDragDrop != null)
                 {
                     NodeDragDrop(MapView.Tree, NodeDropLocation);
