@@ -51,7 +51,7 @@ namespace MindMate.View.MapControls
                 RefreshNodeDropLocation(e.Location);//刷新节点下落位置
                 if (!NodeDropLocation.IsEmpty && NodeDragDrop != null)
                 {
-                    NodeDragDrop(MapView.Tree, NodeDropLocation);
+                    NodeDragDrop(MapView.Tree, NodeDropLocation);//节点拖拉下落
                 }
                 MapView.Canvas.KeyDown -= Canvas_KeyDown;
             }           
