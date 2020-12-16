@@ -27,20 +27,20 @@ namespace MindMate.View.MapControls
             canvasDragCursor = new Cursor(new System.IO.MemoryStream(MindMate.Properties.Resources.HandDrag));
             
         }
-
+//鼠标拖拉时
         internal void OnMouseDrag(MouseEventArgs e)
         {
-            if (!IsDragging)
+            if (!IsDragging)//不是正在拖拉
             {
-                DragStart(e);
+                DragStart(e);//拖拉开始
             }
-            else if (IsCanvasDragging)
+            else if (IsCanvasDragging)//画布正在拖拉
             {
-                MoveCanvas(e);
+                MoveCanvas(e);//移动画布
             }
-            else if(IsNodeDragging)
+            else if(IsNodeDragging)//节点正在拖拉
             {
-                ShowDropHint(e);
+                ShowDropHint(e);//显示提示
             }
         }        
 
